@@ -1,0 +1,26 @@
+/* || Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --grey-950: #1d1e25;
+  --grey-900: #343a40;
+  --grey-400: #8d8d8d;
+  --grey-50: #fafafa;
+  --orange-400: #f3603c;
+  --orange-350: #f98f75;
+  --orange-50: #fff0ec;
+  --blue-950: #242d52;
+  --blue-50: #e5e9ea;
+  --red-500: #f33c3c;
+  --gradient-1: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+/* || Main Styles */
