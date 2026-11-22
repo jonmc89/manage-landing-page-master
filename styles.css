@@ -152,6 +152,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-block-end: 6rem;
 }
 
 .features-header-wrapper {
@@ -212,6 +213,110 @@ header {
   font-weight: 400;
   font-size: 0.8125rem;
   line-height: 200%;
+}
+
+/* What they said */
+
+.what-they-said-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  button {
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0.6rem 1.5rem var(--orange-350);
+    border: none;
+    border-radius: 1.375rem;
+    background-color: var(--orange-400);
+    padding: 1rem 2rem;
+    color: var(--white);
+    font-size: 700;
+  }
+
+  button:hover {
+    opacity: 0.5;
+  }
+}
+
+ul {
+  display: flex;
+  padding: 1.7rem 0;
+  width: 100vw;
+  height: 300px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-marker-group: after;
+  anchor-name: --my-carousel;
+  margin-block-end: 2rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+ul::-webkit-scrollbar {
+  scrollbar-width: none;
+}
+
+li {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  list-style-type: none;
+}
+
+ul::scroll-marker-group {
+  display: flex;
+  position: absolute;
+  position-anchor: --my-carousel;
+  top: calc(anchor(bottom) + 2rem);
+  justify-content: center;
+  justify-self: anchor-center;
+  gap: 20px;
+}
+
+li::scroll-marker {
+  cursor: pointer;
+  border: 1px solid var(--orange-400);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  content: '';
+}
+
+li::scroll-marker:target-current {
+  background-color: var(--orange-400);
+}
+
+.carousel-content-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--grey-50);
+  padding: 2rem;
+  width: 100%;
+  height: 17.125rem;
+  text-align: center;
+
+  img {
+    position: absolute;
+    top: -1.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  h4 {
+    padding-top: 1.5rem;
+    color: var(--blue-950);
+    font-size: 1rem;
+  }
+
+  p {
+    color: var(--grey-400);
+    line-height: 200%;
+  }
 }
 
 /* Media Queries */
