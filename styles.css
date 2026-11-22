@@ -222,6 +222,7 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
+  margin-block-end: 6rem;
 
   button {
     transition: opacity 0.2s ease-in-out;
@@ -240,7 +241,7 @@ header {
   }
 }
 
-ul {
+.what-said-carousel {
   display: flex;
   padding: 1.7rem 0;
   width: 100vw;
@@ -252,19 +253,32 @@ ul {
   margin-block-end: 2rem;
   scroll-behavior: smooth;
   scrollbar-width: none;
+
+  li {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    list-style-type: none;
+  }
+
+  li::scroll-marker {
+    cursor: pointer;
+    border: 1px solid var(--orange-400);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    content: '';
+  }
+
+  li::scroll-marker:target-current {
+    background-color: var(--orange-400);
+  }
 }
 
-ul::-webkit-scrollbar {
+.what-said-carousel::-webkit-scrollbar {
   scrollbar-width: none;
 }
 
-li {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
-  list-style-type: none;
-}
-
-ul::scroll-marker-group {
+.what-said-carousel::scroll-marker-group {
   display: flex;
   position: absolute;
   position-anchor: --my-carousel;
@@ -272,19 +286,6 @@ ul::scroll-marker-group {
   justify-content: center;
   justify-self: anchor-center;
   gap: 20px;
-}
-
-li::scroll-marker {
-  cursor: pointer;
-  border: 1px solid var(--orange-400);
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  content: '';
-}
-
-li::scroll-marker:target-current {
-  background-color: var(--orange-400);
 }
 
 .carousel-content-wrapper {
@@ -319,6 +320,43 @@ li::scroll-marker:target-current {
   }
 }
 
+/* Call to action section */
+
+.call-to-action-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: var(--orange-400);
+  height: 25.3125rem;
+
+  p {
+    width: 10ch;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 110%;
+    text-align: center;
+  }
+
+  button {
+    transition: filter 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+    border-radius: 1.375rem;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    color: var(--orange-400);
+    font-weight: 600;
+    font-size: 0.8125rem;
+  }
+
+  button:hover {
+    filter: brightness(120%);
+  }
+}
+
 /* Media Queries */
 
 /* Tablet*/
@@ -338,6 +376,11 @@ li::scroll-marker:target-current {
         width: 50ch;
       }
     }
+  }
+
+  .what-said-carousel {
+    gap: 8rem;
+    padding: 1.7rem 8rem;
   }
 }
 
