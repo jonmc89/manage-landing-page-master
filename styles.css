@@ -26,15 +26,107 @@
 /* || Main Styles */
 
 body {
+  position: relative;
   padding: 2.5625rem 0 0 0;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: absolute;
+  transform: translateY(100vh);
+  opacity: 0;
+  z-index: -1;
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+  background: var(--gradient-1);
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.show-overlay {
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.mobile-menu {
+  display: flex;
+  position: absolute;
+  top: 6.25rem;
+  left: 50%;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100vw);
+  opacity: 0;
+  z-index: 99;
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+  background-color: var(--white);
+  width: 80%;
+  height: 18.1875rem;
+  pointer-events: none;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    text-align: center;
+  }
+}
+
+.mobile-nav-link {
+  transition: color 0.2s ease-in-out;
+  color: var(--blue-950);
+  text-decoration: none;
+}
+
+.mobile-nav-link:hover {
+  color: var(--orange-400);
+}
+
+.mobile-nav-link:focus {
+  outline-color: var(--orange-400);
+  outline-offset: 0.5rem;
+}
+
+.show-mobile-menu {
+  transform: translateX(-50%);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 header {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   margin-block-end: 4rem;
   padding: 0 1.5rem;
+}
+
+.bk-image-1,
+.bk-image-2 {
+  position: absolute;
+  z-index: -1;
+}
+
+.bk-image-1 {
+  top: -6rem;
+  right: -8rem;
+  width: 30rem;
+  height: auto;
+}
+
+.bk-image-2 {
+  top: 32rem;
+  right: -15rem;
+  width: 20rem;
+  height: auto;
 }
 
 /* Header Nav */
@@ -80,6 +172,7 @@ header {
 /* Header Nav End */
 
 .menu-button {
+  z-index: 200;
   cursor: pointer;
   border: none;
   background-color: transparent;
@@ -324,6 +417,7 @@ header {
 
 .call-to-action-section {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -355,6 +449,14 @@ header {
   button:hover {
     filter: brightness(120%);
   }
+}
+
+.bk-image-3 {
+  position: absolute;
+  top: 50%;
+  left: 0rem;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 /* Footer */

@@ -17,9 +17,21 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <title>Frontend Mentor | Manage landing page</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <div id="overlay" class="overlay"></div>
+    <nav id="mobileMenu" class="mobile-menu">
+      <ul>
+        <li><a class="mobile-nav-link" href="#">Pricing</a></li>
+        <li><a class="mobile-nav-link" href="#">Product</a></li>
+        <li><a class="mobile-nav-link" href="#">About Us</a></li>
+        <li><a class="mobile-nav-link" href="#">Careers</a></li>
+        <li><a class="mobile-nav-link" href="#">Community</a></li>
+      </ul>
+    </nav>
     <header>
+      <img class="bk-image-1" src="./images/bg-tablet-pattern.svg" alt="" />
       <img src="./images/logo.svg" alt="Manage logo" />
       <nav class="header-nav">
         <ul class="header-list">
@@ -31,9 +43,15 @@
         </ul>
       </nav>
       <button class="header-btn-get-started">Get Started</button>
-      <button id="menuBtn" class="menu-button">
+      <button
+        id="menuBtn"
+        class="menu-button"
+        aria-expanded="false"
+        aria-label="Open navigation"
+      >
         <img src="./images/icon-hamburger.svg" alt="Menu icon" />
       </button>
+      <img class="bk-image-2" src="./images/bg-tablet-pattern.svg" alt="" />
     </header>
     <main>
       <section class="hero-content">
@@ -141,6 +159,11 @@
         <button>Get Started</button>
       </section>
       <section class="call-to-action-section">
+        <img
+          class="bk-image-3"
+          src="./images/bg-simplify-section-mobile.svg"
+          alt=""
+        />
         <p>Simplify how your team works today.</p>
         <button>Get Started</button>
       </section>
