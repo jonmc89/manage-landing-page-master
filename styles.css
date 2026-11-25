@@ -537,29 +537,20 @@ footer {
 }
 
 .footer-nav-wrapper {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  width: 100%;
-}
+  padding: 0 1rem;
 
-.footer-nav-wrapper {
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    list-style: none;
-  }
-
-  li a {
-    transition: color 0.2s ease-in-out;
+  a {
     color: var(--white);
-    font-size: 1rem;
     text-decoration: none;
   }
 
-  li a:hover {
-    color: var(--orange-400);
+  a:focus {
+    outline-color: var(--orange-400);
+    outline-offset: 0.5rem;
   }
 }
 
@@ -570,6 +561,11 @@ footer {
 
   a {
     transition: filter 0.2s ease-in-out;
+  }
+
+  a:focus {
+    outline-color: var(--orange-400);
+    outline-offset: 0.5rem;
   }
 
   a:hover {
@@ -593,7 +589,37 @@ footer {
 
 @media screen and (min-width: 48rem) {
   body {
-    padding: 2.5625rem 3rem;
+    padding-top: 2.5625rem;
+  }
+
+  .bk-image-1 {
+    top: -16rem;
+    right: -8rem;
+    width: 50rem;
+    height: auto;
+  }
+
+  .bk-image-2 {
+    top: 40rem;
+    right: -12rem;
+    width: 20rem;
+    height: auto;
+  }
+
+  header,
+  footer,
+  .hero-content {
+    padding: 0 3rem;
+  }
+
+  .hero-content,
+  .features-section,
+  .what-they-said-section {
+    margin-block-end: 8rem;
+  }
+
+  .features-section {
+    padding-left: 3rem;
   }
 
   .hero-content {
@@ -608,9 +634,39 @@ footer {
     }
   }
 
+  .features-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      width: 55ch;
+    }
+  }
+
+  .feature-text {
+    width: 74ch;
+  }
+
+  .call-to-action-section {
+    padding: 3rem 0;
+    height: 250px;
+
+    p {
+      width: 20ch;
+    }
+  }
+
   .what-said-carousel {
     gap: 8rem;
     padding: 1.7rem 8rem;
+  }
+
+  footer {
+    padding-top: 4rem;
+  }
+
+  .footer-nav-wrapper {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -620,6 +676,13 @@ footer {
   body {
     margin-inline: auto;
     width: min(100% - 10.3125rem, 90rem);
+  }
+
+  .bk-image-1 {
+    top: -16rem;
+    right: -8rem;
+    width: 50rem;
+    height: auto;
   }
 
   /* Header */
