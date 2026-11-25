@@ -37,3 +37,43 @@ menuBtn.addEventListener('click', () => {
 window.addEventListener('scroll', () => {
   closeMenu();
 });
+
+// Form Validation
+
+const formEl = document.getElementById('form');
+const emailInputEl = document.getElementById('email');
+const errorMessageEl = document.getElementById('errorMessage');
+
+emailInputEl.addEventListener('input', (event) => {
+  if (emailInputEl.validity.valid) {
+    errorMessageEl.textContent = '';
+    errorMessageEl.classList.remove('show-error-message');
+    errorMessageEl.hidden = true;
+    emailInputEl.setAttribute('aria-invalid', 'false');
+    errorMessageEl.classList.remove('input-error');
+    emailInputEl.classList.remove('input-error-text');
+  } else {
+    showError();
+  }
+});
+
+formEl.addEventListener('submit', (event) => {
+  if (!emailInputEl.validity.valid) {
+    showError();
+    emailInputEl.classList.add('input-error-text');
+    event.preventDefault();
+  }
+});
+
+function showError() {
+  if (emailInputEl.validity.valueMissing) {
+    errorMessageEl.textContent = 'Please insert valid email';
+  } else if (emailInputEl.validity.typeMismatch) {
+    errorMessageEl.textContent = 'Please insert valid email';
+  }
+  errorMessageEl.hidden = false;
+  emailInputEl.classList.add('input-error');
+  errorMessageEl.classList.add('show-error-message');
+
+  emailInputEl.setAttribute('aria-invalid', 'false');
+}

@@ -483,12 +483,21 @@ footer {
     gap: 0.5rem;
 
     input {
+      border: none;
       padding: 0 24px;
       width: 14.9375rem;
     }
 
     input:focus {
       outline-color: var(--orange-350);
+    }
+
+    .input-error {
+      outline-color: var(--red-500);
+    }
+
+    .input-error-text {
+      color: var(--red-500);
     }
 
     button {
@@ -517,8 +526,14 @@ footer {
 }
 
 .error-message {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
   width: 100%;
   color: var(--red-500);
+}
+
+.show-error-message {
+  opacity: 1;
 }
 
 .footer-nav-wrapper {
