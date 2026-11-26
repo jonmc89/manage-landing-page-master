@@ -230,7 +230,7 @@ header {
       background-color: var(--orange-400);
       padding: 1rem 2rem;
       color: var(--white);
-      font-size: 700;
+      font-weight: 700;
     }
 
     button:hover {
@@ -437,7 +437,11 @@ header {
   }
 
   button {
+    z-index: 999;
     transition: filter 0.2s ease-in-out;
+    transition:
+      background-color 0.2s ease-in-out,
+      color 0.2s ease-in-out;
     cursor: pointer;
     border: none;
     border-radius: 1.375rem;
@@ -449,7 +453,8 @@ header {
   }
 
   button:hover {
-    filter: brightness(120%);
+    background-color: var(--blue-950);
+    color: var(--white);
   }
 }
 
@@ -551,6 +556,7 @@ footer {
   padding: 0 1rem;
 
   a {
+    transition: color 0.2s ease-in-out;
     color: var(--white);
     text-decoration: none;
   }
@@ -558,6 +564,10 @@ footer {
   a:focus {
     outline-color: var(--orange-400);
     outline-offset: 0.5rem;
+  }
+
+  a:hover {
+    color: var(--orange-400);
   }
 }
 
@@ -595,11 +605,12 @@ footer {
 /* Tablet*/
 
 @media screen and (min-width: 48rem) {
-  html {
+  html,
+  body {
     overflow-x: hidden;
   }
   body {
-    padding-top: 2.5625rem 4rem;
+    padding-top: 2.5625rem;
   }
 
   .bk-image-1 {
