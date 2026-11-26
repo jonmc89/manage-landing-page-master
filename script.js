@@ -24,6 +24,11 @@ document.addEventListener('click', (event) => {
 menuBtn.addEventListener('click', () => {
   const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
 
+  mobileMenu.setAttribute(
+    'aria-label',
+    isOpen ? 'Open navigation menu' : 'Close navigation menu',
+  );
+
   if (isOpen) {
     closeMenu();
   } else {
@@ -31,6 +36,7 @@ menuBtn.addEventListener('click', () => {
     overlay.classList.add('show-overlay');
     mobileMenu.classList.add('show-mobile-menu');
     menuIcon.src = './images/icon-close.svg';
+    mobileMenu.inert = isOpen;
   }
 });
 

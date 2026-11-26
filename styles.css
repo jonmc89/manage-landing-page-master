@@ -438,7 +438,6 @@ header {
 
   button {
     z-index: 999;
-    transition: filter 0.2s ease-in-out;
     transition:
       background-color 0.2s ease-in-out,
       color 0.2s ease-in-out;
