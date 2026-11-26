@@ -21,7 +21,11 @@
   </head>
   <body>
     <div id="overlay" class="overlay"></div>
-    <nav id="mobileMenu" class="mobile-menu">
+    <nav
+      id="mobileMenu"
+      class="mobile-menu"
+      aria-label="Mobile Navigation Menu"
+    >
       <ul>
         <li><a class="mobile-nav-link" href="#">Pricing</a></li>
         <li><a class="mobile-nav-link" href="#">Product</a></li>
@@ -33,7 +37,7 @@
     <header>
       <img src="./images/logo.svg" alt="Manage logo" />
       <img class="bk-image-1" src="./images/bg-tablet-pattern.svg" alt="" />
-      <nav class="header-nav">
+      <nav class="header-nav" aria-label="Desktop Naviagtion Menu">
         <ul class="header-list">
           <li><a class="header-link" href="#">Pricing</a></li>
           <li><a class="header-link" href="#">Product</a></li>
@@ -119,7 +123,7 @@
       <section class="what-they-said-section">
         <h2>What they've said</h2>
         <ul class="what-said-carousel">
-          <li data-accName="Item 1">
+          <li data-accName="Item 1" tabindex="0" aria-label="testimonial 1">
             <div class="carousel-content-wrapper">
               <img
                 src="./images/avatar-anisha.png"
@@ -133,7 +137,7 @@
               </p>
             </div>
           </li>
-          <li data-accName="Item 2">
+          <li data-accName="Item 2" tabindex="1" aria-label="testimonial 2">
             <div class="carousel-content-wrapper">
               <img src="./images/avatar-ali.png" alt="woman with brown hair" />
               <h4>Ali Bravo</h4>
@@ -144,7 +148,7 @@
               </p>
             </div>
           </li>
-          <li data-accName="Item 3">
+          <li data-accName="Item 3" tabindex="3" aria-label="testimonial 3">
             <div class="carousel-content-wrapper">
               <img src="./images/avatar-richard.png" alt="man with glasses" />
               <h4>Richard Watts</h4>
@@ -155,7 +159,7 @@
               </p>
             </div>
           </li>
-          <li data-accName="Item 4">
+          <li data-accName="Item 4" tabindex="4" aria-label="testimonial 4">
             <div class="carousel-content-wrapper">
               <img
                 src="./images/avatar-shanai.png"
@@ -208,7 +212,7 @@
           hidden
         ></p>
       </div>
-      <nav class="footer-nav-wrapper">
+      <nav class="footer-nav-wrapper" aria-label="Footer Navigation Menu">
         <a href="#">Home</a>
         <a href="#">Pricing</a>
         <a href="#">Products</a>
@@ -227,7 +231,7 @@
         <a href="#" aria-label="link to twitter"
           ><img class="socail-icon" src="./images/icon-twitter.svg" alt=""
         /></a>
-        <a href="#" aria-label="link to pintrest"
+        <a href="#" aria-label="link to pinterest"
           ><img class="socail-icon" src="./images/icon-pinterest.svg" alt=""
         /></a>
         <a href="#" aria-label="link to instagram"
