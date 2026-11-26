@@ -77,7 +77,6 @@ function showError() {
     errorMessageEl.textContent = 'Please insert valid email';
   }
   errorMessageEl.hidden = false;
-  emailInputEl.classList.add('input-error');
   errorMessageEl.classList.add('show-error-message');
 
   emailInputEl.setAttribute('aria-invalid', 'false');
