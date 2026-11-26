@@ -340,6 +340,7 @@ header {
   width: 100vw;
   height: 300px;
   overflow-x: scroll;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-marker-group: after;
   anchor-name: --my-carousel;
@@ -424,6 +425,7 @@ header {
   gap: 2.5rem;
   background-color: var(--orange-400);
   height: 25.3125rem;
+  overflow: hidden;
 
   p {
     width: 10ch;
@@ -457,6 +459,11 @@ header {
   left: 0rem;
   transform: translateY(-50%);
   z-index: 1;
+}
+
+.bk-image-4 {
+  display: none;
+  position: absolute;
 }
 
 /* Footer */
@@ -588,8 +595,11 @@ footer {
 /* Tablet*/
 
 @media screen and (min-width: 48rem) {
+  html {
+    overflow-x: hidden;
+  }
   body {
-    padding-top: 2.5625rem;
+    padding-top: 2.5625rem 4rem;
   }
 
   .bk-image-1 {
@@ -673,15 +683,21 @@ footer {
 /* Desktop */
 
 @media screen and (min-width: 90rem) {
-  body {
-    margin-inline: auto;
-    width: min(100% - 10.3125rem, 90rem);
+  html {
+    overflow-x: hidden;
   }
 
   .bk-image-1 {
     top: -16rem;
     right: -8rem;
     width: 50rem;
+    height: auto;
+  }
+
+  .bk-image-2 {
+    top: 62rem;
+    left: -30rem;
+    width: 52rem;
     height: auto;
   }
 
@@ -718,6 +734,106 @@ footer {
       p {
         text-align: left;
       }
+    }
+  }
+
+  .features-section {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-item-header {
+    background-color: transparent;
+  }
+
+  .features-header-wrapper {
+    justify-self: left;
+    h2,
+    p {
+      align-self: self-start;
+      padding: 0;
+      width: 70%;
+      text-align: left;
+    }
+  }
+
+  .what-said-carousel {
+    gap: 3rem;
+    padding-inline: max(0px, calc((100% - 600px) / 2));
+    width: 100%;
+  }
+
+  .what-said-carousel li {
+    flex: 0 0 600px;
+  }
+
+  .carousel-content-wrapper {
+    width: 100%;
+  }
+
+  .call-to-action-section {
+    flex-direction: row;
+    justify-content: space-around;
+    p {
+      text-align: left;
+    }
+  }
+
+  .bk-image-3 {
+    display: none;
+  }
+
+  .bk-image-4 {
+    display: block;
+    top: -5rem;
+    left: 20rem;
+  }
+
+  footer {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0rem;
+    padding: 4rem;
+    height: 18.75rem;
+
+    img,
+    .socials-wrapper {
+      justify-self: self-start;
+    }
+
+    img {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .socials-wrapper {
+      grid-row: 2;
+      grid-column: 1;
+      align-self: self-end;
+    }
+
+    .footer-nav-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row: 1 / -1;
+      grid-column: 2;
+    }
+
+    .form-section,
+    p {
+      justify-self: self-end;
+    }
+
+    .form-section {
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    p {
+      grid-row: 2;
+      grid-column: 3;
+      align-self: self-end;
     }
   }
 }
