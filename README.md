@@ -34,7 +34,7 @@ Users should be able to:
 
 #### Desktop Preview
 
-![](./Previews/Dekstop%20Preview.png)
+![](./Previews/Desktop%20Preview.png)
 
 #### Mobile Device Preview
 
