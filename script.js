@@ -10,6 +10,7 @@ function closeMenu() {
   overlay.classList.remove('show-overlay');
   mobileMenu.classList.remove('show-mobile-menu');
   menuIcon.src = './images/icon-hamburger.svg';
+  mobileMenu.inert = true;
 }
 
 document.addEventListener('click', (event) => {
@@ -36,7 +37,7 @@ menuBtn.addEventListener('click', () => {
     overlay.classList.add('show-overlay');
     mobileMenu.classList.add('show-mobile-menu');
     menuIcon.src = './images/icon-close.svg';
-    mobileMenu.inert = isOpen;
+    mobileMenu.inert = false;
   }
 });
 

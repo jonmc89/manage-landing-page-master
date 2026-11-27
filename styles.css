@@ -153,6 +153,11 @@ header {
   text-decoration: none;
 }
 
+.header-link:focus {
+  outline: 0.5rem;
+  outline-color: var(--orange-350);
+}
+
 .header-link:hover {
   opacity: 0.5;
 }
@@ -181,6 +186,10 @@ header {
   border: none;
   background-color: transparent;
   height: 1rem;
+}
+.menu-button:focus {
+  outline-color: var(--orange-350);
+  outline-offset: 1rem;
 }
 
 /* Main */
@@ -378,6 +387,12 @@ header {
   li::scroll-marker:target-current {
     background-color: var(--orange-400);
   }
+}
+
+.what-said-carousel:focus-visible {
+  outline: 0.1rem solid var(--orange-350);
+
+  outline-offset: 0.5rem;
 }
 
 .what-said-carousel::-webkit-scrollbar {
