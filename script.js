@@ -56,7 +56,7 @@ emailInputEl.addEventListener('input', (event) => {
     errorMessageEl.classList.remove('show-error-message');
     errorMessageEl.hidden = true;
     emailInputEl.setAttribute('aria-invalid', 'false');
-    emailInputEl.classList.remove('input-error-text');
+    emailInputEl.classList.remove('input-error');
   } else {
     showError();
   }
@@ -78,6 +78,6 @@ function showError() {
   }
   errorMessageEl.hidden = false;
   errorMessageEl.classList.add('show-error-message');
-
+  emailInputEl.classList.add('input-error');
   emailInputEl.setAttribute('aria-invalid', 'false');
 }

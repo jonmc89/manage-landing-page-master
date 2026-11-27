@@ -25,10 +25,14 @@
 
 /* || Main Styles */
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
   padding: 2.5625rem 0 0 0;
-  overflow-x: hidden;
 }
 
 .overlay {
@@ -496,7 +500,7 @@ footer {
     input {
       border: none;
       padding: 0 24px;
-      width: 14.9375rem;
+      width: 100%;
     }
 
     input:focus {
@@ -504,10 +508,7 @@ footer {
     }
 
     .input-error {
-      outline-color: var(--red-500);
-    }
-
-    .input-error-text {
+      border: 0.1rem solid var(--red-500);
       color: var(--red-500);
     }
 
